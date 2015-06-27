@@ -1,0 +1,83 @@
+# BeefNote TODO list
+
+# 001 IMPLEMENTED
+# New File
+	create new file from within the application, where the new file should be created?
+	PREREQ: 002
+#### IMPLEMENTED
+
+# 002 IMPLEMENTED
+# Current File cursor in sidebar
+	highlight currently opened file and/or directory in sidebar
+	change active directory to that of currently opened note
+#### IMPLEMENTED
+
+# 003
+# Create new directory from within application
+	PREREQ: 002
+
+# 004
+# Delete file from within application
+	dont forget user confirmation, preferably delete to trash
+
+# 005
+# Delete directory, warn user when deleting non empty directory
+	PREREQ: 002
+
+# 006
+# Search
+	search for string in open notebook, think of way to present results to user, probably just open the file and highlight searched phrase should be sufficient now
+
+# 007
+# Settings
+	way to store and load settings, so app looks the same after restarting
+	LOW PRIORITY
+
+# 008
+# Settings GUI
+	gui allowing user to change settings easily
+	PREREQ: 007
+	LOW PRIORITY
+
+# 009
+# Print
+	print current file
+	LOW PRIORITY
+
+# 010
+# Keystrokes
+	keystrokes for actions, research similar software and/or HIG/CUA and base keystrokes on something familiar to users
+	LOW PRIORITY
+
+# 011
+# Resizable sidebar
+	make sidebar resizable
+
+# 012
+# Visual style, GUI, Layout, Icon
+	finish appearance of app
+
+# 013
+# Right click menu
+	implement context menu
+	LOW PRIORITY
+
+# 014 IMPLEMENTED
+# Implement proper saving
+	save only if there were changes
+#### IMPLEMENTED
+
+# 015
+# Basic editing functionality
+	provide basic editing functionality (undo, redo, save, copy, paste, ...) and ways to access it (keystrokes, toolbar, menu)
+	LOW PRIORITY
+
+# 016
+# Rename file or directory
+	PREREQ: 002, 013
+
+# 017
+# Trailing slash in currentPath of the notebook
+	in BN.init method, make sure currentPath in BN.cfg contains trailing slash
+	if not, add it also to BN.cfg object
+	otherwise some parts of code might not work, it is probably better to do that on startup and when storing this path than everywhere else in code
