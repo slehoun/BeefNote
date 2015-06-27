@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Beefnote by slehoun</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Beefnote</h1>
+        <p>Simple note taking application.</p>
+
+        <p class="view"><a href="https://github.com/slehoun/BeefNote">View the Project on GitHub <small>slehoun/BeefNote</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/slehoun/BeefNote/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/slehoun/BeefNote/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/slehoun/BeefNote">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="beefnote" class="anchor" href="#beefnote" aria-hidden="true"><span class="octicon octicon-link"></span></a>BeefNote</h1>
+
+<p>Simple note taking application.
+BeefNote lets you create and edit notes quickly and without any distractions.
+Each note is stored as a single file on your disk, so you can edit/backup/archive/restore your notes easily.</p>
+
+<h3>
+<a id="architecture-overview" class="anchor" href="#architecture-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Architecture overview</h3>
+
+<p>BeefNote is built on top of <a href="http://nwjs.io/">nw.js runtime</a>, which itself implements <code>Chromium</code> and <code>node.js</code>.</p>
+
+<h3>
+<a id="installation-instructions" class="anchor" href="#installation-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation instructions</h3>
+
+<h5>
+<a id="bundled-application-builds" class="anchor" href="#bundled-application-builds" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bundled application builds</h5>
+
+<p>Bundled application builds (including nw.js) can be downloaded
+<a href="https://drive.google.com/open?id=0BwmAR5mHWgl4fkwybnRyRlRGWkNuNVJNR2FkcUtmeldEZnBkdmxpRzczZHBBS3hDeVU5Uk0&amp;authuser=0">here</a>.
+Unpack downloaded file and run <code>nw</code> executable (<code>nw.exe</code> on Windows).</p>
+
+<h5>
+<a id="complicated-way" class="anchor" href="#complicated-way" aria-hidden="true"><span class="octicon octicon-link"></span></a>Complicated way</h5>
+
+<p>To run BeefNote, you will need nw.js runtime, that can be downloaded directly from
+<a href="http://nwjs.io/">nw.js website</a> or from these links:</p>
+
+<ul>
+<li><a href="http://dl.nwjs.io/v0.12.2/nwjs-v0.12.2-linux-x64.tar.gz">Linux64 - http://dl.nwjs.io/v0.12.2/nwjs-v0.12.2-linux-x64.tar.gz</a></li>
+<li><a href="http://dl.nwjs.io/v0.12.2/nwjs-v0.12.2-win-x64.zip">Windows64 - http://dl.nwjs.io/v0.12.2/nwjs-v0.12.2-win-x64.zip</a></li>
+<li><a href="http://dl.nwjs.io/v0.12.2/nwjs-v0.12.2-osx-x64.zip">OSX64 - http://dl.nwjs.io/v0.12.2/nwjs-v0.12.2-osx-x64.zip</a></li>
+</ul>
+
+<p>Once you download and extract <code>nw.js</code> runtime:</p>
+
+<ul>
+<li>on Linux, navigate to folder you extracted (one containing <code>notebook</code>, <code>www</code> and <code>package.json</code>) and run <code>$ /path/to/nw .</code>
+</li>
+<li>on Windows, drag the unzipped BeefNote folder (one containing <code>notebook</code>, <code>www</code> and <code>package.json</code>) to nw.exe to run it</li>
+<li>on OSX navigate to folder you extracted (one containing <code>notebook</code>, <code>www</code> and <code>package.json</code>) and run<code>/path/to/nwjs.app/Contents/MacOS/nwjs .</code>
+</li>
+</ul>
+
+<h3>
+<a id="issues" class="anchor" href="#issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues</h3>
+
+<p>Big part of basic functionality is still missing. This is work in progress.</p>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Once you start BeefNote, left panel shows all your notes organized in folders.
+Each note/folder is physically represented by a file/folder on the disk.
+Click any note to instantly edit it.
+Once you open another note, your changes are saved automatically.</p>
+
+<p>All your notes are stored transparently without any junk in 'notebook' folder in the root folder of the application.
+That way you can edit them in another applications, archive, backup, restore or do whatever you want with them.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/slehoun">slehoun</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
