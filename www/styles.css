@@ -4,12 +4,6 @@
           box-sizing: border-box;
 }
 
-canvas {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
 body, html {
     height: 100%;
     width: 100%;
@@ -17,6 +11,7 @@ body, html {
     font-size: 10pt;
     color: #909090;
 }
+
 body {
 	overflow: hidden;
 	margin: 0;
@@ -62,90 +57,41 @@ h1 {
 			background-clip: text;
 }
 
-#BN_top {
-	position: relative;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-}
-
-#BN_sideBar {
+#BN-sidebar {
 	/*position: absolute;*/
 	left: 0;
 	top: 0;
 	bottom: 0;
 	height: 100vh;
 	width: 150px;
+	min-width: 75px;
+	max-width: 75%;
 	float: left;
 	/*overflow: auto;*/
 	padding: 15px;
 	padding-top: 13px;
+  /*resize: horizontal;*/
 }
 
-#BN_body {
+#BN-content {
 	/*position: absolute;*/
 	overflow: hidden;
 	/*float: left;*/
+	min-width: 150px;
 	height: 100vh;
 	/*width: 100%;*/
 }
 
-#BN_resizer {
-	height: 100vh;
+#BN-splitbar {
+  cursor: ew-resize;
 	float: left;
-	width: 5px;
-	padding-bottom: 15px;
-	padding-top: 15px;
-	padding-left: 2px;
-	padding-right: 2px;
-}
-
-#BN_resizerBar {
-	background-color: #dddddd;
-	width: 100%;
-	height: 100%;
-}
-
-.sideBarDir {
-	cursor: pointer;
-}
-
-.sideBarFile {
-	cursor: pointer;
-}
-
-.sideBarDir:hover {
-	background-color: #fafafa;
-	color: black;
-}
-
-.sideBarFile:hover {
-	background-color: #fafafa;
-	color: black;
-}
-
-.sideBarCursor {
-	/*text-decoration: underline;*/
-	color: black;
-	background-color: #fafafa;
-	/*border-left: solid 2px lightblue;*/
-}
-
-.sideBarActiveDir {
-    border-left: solid 2px #06b5f1;
-}
-
-.oi {
-	font-size: 6pt;
-}
-
-ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
-li {
-	padding-top: 2px;
-	padding-bottom: 1px;
+	height: 100vh;
+  width: 10px;
+  background: #cccccc;
+  border-style: solid;
+  border-color: #ffffff;
+  border-top-width: 15px;
+  border-bottom-width: 15px;
+  border-left-width: 4px;
+  border-right-width: 4px;
 }

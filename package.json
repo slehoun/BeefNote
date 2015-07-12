@@ -1,18 +1,12 @@
 {
-	"name": "beefnote",
-	"description": "App for taking quick notes.",
-	"version": "0.1.7",
-	"keywords": [ "notes", "note-taking", "notebook" ],
-	"main": "/www/index.html",
-	"window": {
-		"toolbar": false,
-		"title": "BeefNote",
-		"width": 800,
-		"height": 400
-	},
-	"maintainers": [{
-		"name": "Matej Ruščák",
-		"email": "matej@matejruscak.com",
-		"web": "http://www.matejruscak.com"
-	}]
+  "name"    : "BeefNote",
+  "version" : "0.2.0",
+  "main"    : "main.js",
+  "description" : "Simple note taking application",
+  "keywords" : [
+      "note-taking",
+      "notes"
+  ],
+  "author" : "Matej Ruščák",
+  "license" : "GNU GPL v3"
 }

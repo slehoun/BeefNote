@@ -1,9 +1,0 @@
-Welcome to BeefNote.
-
-Feel free to edit this text. This panel is where you edit content of your notes.
-
-Left panel shows all your notes organized in folders. Each note/folder is physically represented by a file/folder on the disk. Click any note to instantly edit it. Once you open another note, your changes are saved automatically. All your notes are stored in 'notebook' folder in the root folder of the application.
-
-Please note this is a work in progress. Many features you would expect from app like this are still missing.
-
-If you encounter a bug, use F5 to reload application. Might help in some situations.

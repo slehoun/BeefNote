@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<meta charset="UTF-8">
-  	<link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="./fonts/fonts.css">
-    <link rel="stylesheet" type="text/css" href="open-iconic.css" >
+    <meta charset="UTF-8">
     <title>BeefNote</title>
-    <script src="js/BN_init.js"></script>
-    <script src="js/BN_cfg.js"></script>
-    <script src="js/BN_util.js"></script>
-    <script src="js/BN_fileman.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="js/BeefNote.js"></script>
+
   </head>
-  <body onload="BN.init()">
-    <div id="BN_sideBar"><div id="BN_header"><h1>BeefNote</h1><br><span id="newFile"><a href="javascript:BN.createNewNote()">New file</a></span> | <span id="newFolder">New folder</span><hr></div><div id="BN_tree"></div></div>
-    <div id="BN_resizer"><div id="BN_resizerBar"></div></div>
-    <div id="BN_body"><textarea id="BN_textArea">Welcome to BeefNote.
+  <body>
+    <div id="BN-container">
+      <div id="BN-sidebar">
+        <h1>BeefNote</h1>
+      </div>
+      <div id="BN-splitbar"></div>
+      <div id="BN-content">
+        <textarea id="BN-textarea">Welcome to BeefNote.
 
-Feel free to edit this text. This panel is where you edit content of your notes.
+    Feel free to edit this text. This panel is where you edit content of your notes.
 
-Left panel shows all your notes organized in folders. Each note/folder is physically represented by a file/folder on the disk. Click any note to instantly edit it. Once you open another note, your changes are saved automatically. All your notes are stored in 'notebook' folder in the root folder of the application.
+    Left panel shows all your notes organized in folders. Each note/folder is physically represented by a file/folder on the disk. Click any note to instantly edit it. Once you open another note, your changes are saved automatically. All your notes are stored in 'notebook' folder in the root folder of the application.
 
-Please note this is a work in progress. Many features you would expect from app like this are still missing.
+    Please note this is a work in progress. Many features you would expect from app like this are still missing.
 
-If you encounter a bug, use F5 to reload application. Might help in some situations.</textarea></div>
+    If you encounter a bug, use F5 to reload application. Might help in some situations.</textarea>
+      </div>
+    </div>
   </body>
 </html>
