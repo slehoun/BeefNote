@@ -16,9 +16,13 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   mainWindow = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 600,
+    center: true,
+    title: 'BeefNote',
+    show: false
   });
   mainWindow.loadUrl("file://" + __dirname + "/www/index.html");
+  mainWindow.show();
   mainWindow.openDevTools();
   return mainWindow.on('closed', function() {
     return mainWindow = null;

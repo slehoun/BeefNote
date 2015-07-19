@@ -9,13 +9,10 @@ if (BN.GUI == null) {
   BN.GUI = {};
 }
 
-window.$ = window.jQuery = require('./lib/jquery-2.1.4.min.js');
-
-$(document).ready(function() {
-  $('#BN-splitbar').isDragged = false;
+BN.GUI.init = function() {
   BN.GUI.setUpSplitBar();
-  return $('#BN-textarea').focus();
-});
+  return $('#BN-textarea').keydown(BN.GUI.catchTab);
+};
 
 BN.GUI.setUpSplitBar = function() {
   $('#BN-splitbar').mousedown(function(e) {
@@ -41,4 +38,17 @@ BN.GUI.setUpSplitBar = function() {
       return $('#BN-sidebar').css('width', newWidth + "px");
     }
   });
+};
+
+BN.GUI.catchTab = function(e) {
+  var end, start, target, value;
+  if (e.which === 9) {
+    start = this.selectionStart;
+    end = this.selectionEnd;
+    target = e.target;
+    value = target.value;
+    target.value = value.substring(0, start) + '\t' + value.substring(end);
+    this.selectionStart = this.selectionEnd = start + 1;
+    return e.preventDefault();
+  }
 };

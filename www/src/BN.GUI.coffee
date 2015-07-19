@@ -1,15 +1,12 @@
-# BeefNote.coffee
-# main init/app entry point
+# BN.GUI.coffee
+# GUI stuff for application
 
 BN = {} unless BN?
 BN.GUI = {} unless BN.GUI?
 
-window.$ = window.jQuery = require('./lib/jquery-2.1.4.min.js')
-
-$(document).ready ->
-  $('#BN-splitbar').isDragged = false
+BN.GUI.init = ->
   BN.GUI.setUpSplitBar()
-  $('#BN-textarea').focus()
+  $('#BN-textarea').keydown BN.GUI.catchTab
 
 BN.GUI.setUpSplitBar = ->
   $('#BN-splitbar').mousedown (e) ->
@@ -28,3 +25,13 @@ BN.GUI.setUpSplitBar = ->
       delta = e.pageX - $('#BN-splitbar').data 'startX'
       newWidth = $('#BN-splitbar').data('originalWidth') + delta
       $('#BN-sidebar').css 'width', "#{newWidth}px"
+
+BN.GUI.catchTab = (e) ->
+  if e.which is 9 # TAB was pressed
+    start = this.selectionStart
+    end = this.selectionEnd
+    target = e.target
+    value = target.value
+    target.value = value.substring(0, start) + '\t' + value.substring(end)
+    this.selectionStart = this.selectionEnd = start + 1
+    e.preventDefault()
