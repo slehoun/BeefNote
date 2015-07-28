@@ -9,6 +9,6 @@ window.$ = window.jQuery = require('./lib/jquery-2.1.4.min.js');
 
 $(document).ready(function() {
   BN.GUI.init();
-  $('#BN-textarea').focus();
-  return BN.DB.readFileTree("./notebook");
+  BN.DB.init();
+  return $('#BN-textarea').focus();
 });

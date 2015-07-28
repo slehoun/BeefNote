@@ -13,8 +13,44 @@ BN.DB.noteTree = null;
 
 BN.DB.fs = require('fs');
 
+BN.DB.init = function() {
+  BN.DB.noteTree = BN.DB.readFileTree(BN.CFG.notebookPath);
+  console.log('NoteBook tree:');
+  return console.log(BN.DB.noteTree);
+};
+
 BN.DB.readFileTree = function(path) {
-  var files;
+  var tree;
+  tree = BN.DB.scanPath(path);
+  return tree;
+};
+
+BN.DB.scanPath = function(path) {
+  var dirTree, files, tree;
+  tree = {};
+  dirTree = {};
+  tree.files = [];
+  tree.dirs = [];
   files = BN.DB.fs.readdirSync(path);
-  return console.log(files);
+  files.forEach(function(entry) {
+    var fStats, fullPath;
+    fullPath = path + entry;
+    fStats = BN.DB.fs.statSync(fullPath);
+    if (fStats.isDirectory()) {
+      dirTree = BN.DB.scanPath(fullPath + '/');
+      tree.dirs.push({
+        name: entry,
+        path: fullPath,
+        isOpened: false,
+        tree: dirTree
+      });
+    }
+    if (fStats.isFile()) {
+      return tree.files.push({
+        name: entry,
+        path: fullPath
+      });
+    }
+  });
+  return tree;
 };

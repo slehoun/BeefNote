@@ -8,6 +8,6 @@ BN.CFG =
   version:
     major:      0
     minor:      2
-    revision:   13
+    revision:   14
   name: 'BeefNote'
-  notebookPath: './notebook'
+  notebookPath: './notebook/'
