@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="beefNoteNgApp">
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -7,12 +7,25 @@
     <script src="js/BN.DB.js"></script>
     <script src="js/BN.CFG.js"></script>
     <script src="js/BN.GUI.js"></script>
+    <script type="text/javascript" src="lib/angular.1.4.3.min.js"></script>
+
+    <script type="text/ng-template" id="sideBarEntryTpl">
+    {{item.name}}
+    <ul ng-if="item.isDirectory">
+        <li ng-repeat="item in item.tree.items" ng-include="'sideBarEntryTpl'" ng-click="">
+        </li>
+    </ul>
+    </script>
 
   </head>
   <body>
     <div id="BN-container">
-      <div id="BN-sidebar">
+      <div id="BN-sidebar" ng-controller="sideBarController">
         <h1>BeefNote</h1>
+        <ul>
+            <li ng-repeat="item in dirTree.items" ng-include="'sideBarEntryTpl'" ng-click="">
+            </li>
+        </ul>
       </div>
       <div id="BN-splitbar"></div>
       <div id="BN-content">

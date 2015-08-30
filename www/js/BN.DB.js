@@ -11,10 +11,16 @@ if (BN.DB == null) {
 
 BN.DB.noteTree = null;
 
+BN.DB.ngApp = null;
+
 BN.DB.fs = require('fs');
 
 BN.DB.init = function() {
   BN.DB.noteTree = BN.DB.readFileTree(BN.CFG.notebookPath);
+  BN.DB.ngApp = angular.module('beefNoteNgApp', []);
+  BN.DB.ngApp.controller('sideBarController', function($scope) {
+    return $scope.dirTree = BN.DB.noteTree;
+  });
   console.log('NoteBook tree:');
   return console.log(BN.DB.noteTree);
 };
@@ -29,8 +35,7 @@ BN.DB.scanPath = function(path) {
   var dirTree, files, tree;
   tree = {};
   dirTree = {};
-  tree.files = [];
-  tree.dirs = [];
+  tree.items = [];
   files = BN.DB.fs.readdirSync(path);
   files.forEach(function(entry) {
     var fStats, fullPath;
@@ -38,17 +43,19 @@ BN.DB.scanPath = function(path) {
     fStats = BN.DB.fs.statSync(fullPath);
     if (fStats.isDirectory()) {
       dirTree = BN.DB.scanPath(fullPath + '/');
-      tree.dirs.push({
+      tree.items.push({
         name: entry,
         path: fullPath,
+        isDirectory: true,
         isOpened: false,
         tree: dirTree
       });
     }
     if (fStats.isFile()) {
-      return tree.files.push({
+      return tree.items.push({
         name: entry,
-        path: fullPath
+        path: fullPath,
+        isDirectory: false
       });
     }
   });
